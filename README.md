@@ -14,7 +14,7 @@
 
 ## Intro
 
-This a template for creating [rocker](https://github.com/tfoote/rocker) extensions.  It used [off-your-rocker](https://github.com/sloretz/off-your-rocker) as a starting point, and migrated to use `pyproject.toml` instead of `setup.py` to help manage the development environment and continous integration in a modern way using [pixi](https://pixi.sh).
+This a template for creating [rocker](https://github.com/tfoote/rocker) extensions.  It used [off-your-rocker](https://github.com/sloretz/off-your-rocker) as a starting point, and migrated to use `pyproject.toml` instead of `setup.py` to help manage the development environment and continuous integration in a modern way using [pixi](https://pixi.sh).
 
 This has basic setup for
 

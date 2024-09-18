@@ -5,7 +5,7 @@ from unittest.mock import patch
 from template_rocker.new_rocker_extension import NewRockerExtension
 
 
-class TestPixiExtension:
+class TestNewRockerExtension:
 
     # Instantiating PixiExtension and verifying the name attribute is set correctly
     def test_name_attribute_initialization(self):
