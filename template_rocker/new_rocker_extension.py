@@ -5,7 +5,7 @@ from rocker.extensions import RockerExtension
 class NewRockerExtension(RockerExtension):
     @staticmethod
     def get_name():
-        return "pixi"
+        return "new_rocker_extension"
 
     def __init__(self):
         self.name = NewRockerExtension.get_name()

@@ -16,7 +16,7 @@ class TestPixiExtension:
         parser = argparse.ArgumentParser()
         NewRockerExtension.register_arguments(parser)
         args = parser.parse_args([])
-        assert "pixi" in vars(args)
+        assert "new_rocker_extension" in vars(args)
 
     # Handling missing template files in get_snippet method
     def test_get_snippet_missing_template(self):
