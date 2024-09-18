@@ -1,18 +1,5 @@
 # template_rocker
 
-This has basic setup for
-
-* pylint
-* ruff
-* black
-* pytest
-* git-lfs
-* basic github actions ci
-* pulling updates from this template
-* codecov
-* pypi upload
-* dependabot
-
 ## Continuous Integration Status
 
 [![Ci](https://github.com/blooop/template_rocker/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/blooop/template_rocker/actions/workflows/ci.yml?query=branch%3Amain)
@@ -27,9 +14,24 @@ This has basic setup for
 
 ## Intro
 
-This is a [rocker](https://github.com/tfoote/rocker) extension for adding [pixi](https://pixi.sh) to a docker container.  Look at the [rocker](https://github.com/osrf/rocker) github page for more context of how [rocker](https://github.com/osrf/rocker) and [rocker](https://github.com/osrf/rocker) extensions work, but in a nutshell rocker lets you add custom capabilities to existing docker containers.  Rocker extensions   
+This a template for creating [rocker](https://github.com/tfoote/rocker) extensions.  It used [off-your-rocker](https://github.com/sloretz/off-your-rocker) as a starting point, and migrated to use `pyproject.toml` instead of `setup.py` to help manage the development environment and continous integration in a modern way using [pixi](https://pixi.sh).
+
+This has basic setup for
+
+* pylint
+* ruff
+* black
+* pytest
+* git-lfs
+* basic github actions ci
+* pulling updates from this template
+* codecov
+* pypi upload
+* dependabot
 
 [Pixi](https://github.com/prefix-dev/pixi) is a cross-platform package manager based on the conda ecosystem.  It provides a simple and performant way of reproducing a development environment and running user defined tasks and worflows.  It more lightweight than docker, but does not provide the same level of isolation or generality. 
+
+# Install
 
 1. Use github to use this project as a template
 2. Clone the project and run, `scripts/update_from_template.sh` and then run the `scripts/rename_project.sh` to rename the project.
@@ -59,28 +61,6 @@ $pixi run ci
 pixi run arbitrary_task
 ```
 
-If you have dependencies or configuration that cannot be managed by pixi, you can use alternative tools:
-
-- [rockerc](https://github.com/blooop/rockerc): A command-line tool for dynamically creating docker containers with access to host resources such as GPU and 
-- [rockervsc](https://github.com/blooop/rockervsc): A Visual Studio Code extension that integrates rockerc functionality into [vscode remote containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers).
-
-These tools help you create isolated environments with specific dependencies, ensuring consistent setups across different machines.
-
-```bash
-cd project_name
-
-rockerc # build and launch container with dependencies set up
-# OR
-rockervsc # build container, launch and attach vscode to that container.
-
-#once you are inside the container you can use the pixi workflows.
-pixi run ci
-```
-
-## Legacy
-
-If you don't want to install rocker on your system but want to use vscode, you can run the `scripts/launch_vscode.sh` script to build and connect to a docker container. It will install rocker in a venv.  The docker container is dynamically generated using [rocker](https://github.com/osrf/rocker) and [deps rocker](https://github.com/blooop/deps_rocker).  [deps rocker](https://github.com/blooop/deps_rocker) looks at the python_template.deps.yaml file to install any required apt, pip or shell scripts and launches a container that vscode attaches to. 
-
 ## Troubleshooting
 
 The main pixi tasks are related to CI.  Github actions runs the pixi task "ci".  The CI is mostly likey to fail from a lockfile mismatch.  Use the "fix" task to fix any lockfile related problems. 
@@ -97,12 +77,3 @@ There are two core tasks.
 
     This runs python with the file set in \<cfg\>
 
-To install pixi in a container use the --pixi flag
-
-```
-#add pixi to the ubuntu:22.04 image
-rocker --pixi ubuntu:22.04
-
-# add pixi to the nvidia/cuda image
-rocker --pixi nvidia/cuda
-```
