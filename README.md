@@ -14,7 +14,7 @@
 
 ## Intro
 
-This a template for creating [rocker](https://github.com/tfoote/rocker) extensions.  It used [off-your-rocker](https://github.com/sloretz/off-your-rocker) as a starting point, and migrated to use `pyproject.toml` instead of `setup.py` to help manage the development environment and continuous integration in a modern way using [pixi](https://pixi.sh).
+This a template for creating [rocker](https://github.com/tfoote/rocker) extensions.  It used [off-your-rocker](https://github.com/sloretz/off-your-rocker) as a starting point, and migrated to use `pyproject.toml` instead of `setup.py` to help manage the development environment and continuous integration in a modern way using [pixi](https://pixi.sh).  [Pixi](https://github.com/prefix-dev/pixi) is a cross-platform package manager based on the conda ecosystem.  It provides a simple and performant way of reproducing a development environment and running user defined tasks and worflows.  It more lightweight than docker, but does not provide the same level of isolation or generality.
 
 This has basic setup for
 
@@ -29,15 +29,12 @@ This has basic setup for
 * pypi upload
 * dependabot
 
-[Pixi](https://github.com/prefix-dev/pixi) is a cross-platform package manager based on the conda ecosystem.  It provides a simple and performant way of reproducing a development environment and running user defined tasks and worflows.  It more lightweight than docker, but does not provide the same level of isolation or generality. 
-
 # Install
 
 1. Use github to use this project as a template
 2. Clone the project and run, `scripts/update_from_template.sh` and then run the `scripts/rename_project.sh` to rename the project.
 
-
-If you are using pixi, look at the available tasks in pyproject.toml  If you are new to pixi follow the instructions on the pixi [website](https://prefix.dev/)
+If you are using pixi, look at the available tasks in pyproject.toml.  If you are new to pixi follow the instructions on the pixi [website](https://prefix.dev/)
 
 # Github setup
 
