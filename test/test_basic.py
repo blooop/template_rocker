@@ -2,7 +2,7 @@
 import argparse
 import pytest
 from unittest.mock import patch
-from pixi_rocker.pixi import PixiExtension
+from template_rocker.pixi import PixiExtension
 
 
 class TestPixiExtension:
