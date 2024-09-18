@@ -2,13 +2,13 @@ import pkgutil
 from rocker.extensions import RockerExtension
 
 
-class PixiExtension(RockerExtension):
+class NewRockerExtension(RockerExtension):
     @staticmethod
     def get_name():
-        return "pixi"
+        return "new_rocker_extension"
 
     def __init__(self):
-        self.name = PixiExtension.get_name()
+        self.name = NewRockerExtension.get_name()
 
     def get_snippet(self, cliargs):
         return pkgutil.get_data("template_rocker", "templates/curl_snippet.Dockerfile").decode(
@@ -26,7 +26,7 @@ class PixiExtension(RockerExtension):
         if defaults is None:
             defaults = {}
         parser.add_argument(
-            f"--{PixiExtension.get_name()}",
+            f"--{NewRockerExtension.get_name()}",
             action="store_true",
             default=defaults.get("pixi"),
             help="add pixi dependency manager to your environment",

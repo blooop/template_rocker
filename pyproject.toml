@@ -58,7 +58,7 @@ build-backend = "hatchling.build"
 include= ["template_rocker"]
 
 [project.entry-points."rocker.extensions"]
-pixi = "template_rocker.pixi:PixiExtension"
+rocker_extension = "template_rocker.rocker_extension:NewRockerExtension"
 
 # Environments
 [tool.pixi.environments]

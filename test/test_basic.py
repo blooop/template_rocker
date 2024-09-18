@@ -2,26 +2,26 @@
 import argparse
 import pytest
 from unittest.mock import patch
-from template_rocker.pixi import PixiExtension
+from template_rocker.new_rocker_extension import NewRockerExtension
 
 
-class TestPixiExtension:
+class TestNewRockerExtension:
 
     # Instantiating PixiExtension and verifying the name attribute is set correctly
     def test_name_attribute_initialization(self):
-        extension = PixiExtension()
-        assert extension.name == "pixi"
+        extension = NewRockerExtension()
+        assert extension.name == "new_rocker_extension"
 
     def test_register_arguments(self):
         parser = argparse.ArgumentParser()
-        PixiExtension.register_arguments(parser)
+        NewRockerExtension.register_arguments(parser)
         args = parser.parse_args([])
-        assert "pixi" in vars(args)
+        assert "new_rocker_extension" in vars(args)
 
     # Handling missing template files in get_snippet method
     def test_get_snippet_missing_template(self):
 
-        extension = PixiExtension()
+        extension = NewRockerExtension()
         with patch("pkgutil.get_data", return_value=None):
             with pytest.raises(AttributeError):
                 extension.get_snippet({})
@@ -29,7 +29,7 @@ class TestPixiExtension:
     # Retrieving the default snippet using get_snippet method
     def test_retrieve_default_snippet(self):
 
-        extension = PixiExtension()
+        extension = NewRockerExtension()
         snippet = extension.get_snippet(None)
 
         assert snippet is not None
@@ -37,7 +37,7 @@ class TestPixiExtension:
     # Retrieving the user-specific snippet using get_user_snippet method
     def test_retrieve_user_specific_snippet(self):
 
-        extension = PixiExtension()
+        extension = NewRockerExtension()
         snippet = extension.get_user_snippet(None)
 
         assert snippet is not None
