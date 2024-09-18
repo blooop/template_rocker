@@ -1,5 +1,5 @@
 [project]
-name = "pixi_rocker"
+name = "template_rocker"
 version = "0.0.7"
 authors = [{ name = "Austin Gregg-Smith", email = "blooop@gmail.com" }]
 description = "A rocker extension for installing pixi in a container"
@@ -9,8 +9,8 @@ license = "MIT"
 dependencies = ["rocker>=0.2.17"]
 
 [project.urls]
-Source = "https://github.com/blooop/pixi_rocker"
-Home = "https://github.com/blooop/pixi_rocker"
+Source = "https://github.com/blooop/template_rocker"
+Home = "https://github.com/blooop/template_rocker"
 
 [tool.pixi.project]
 channels = ["conda-forge"]
@@ -37,7 +37,7 @@ pypi-dependencies = { deps-rocker = ">=0.2" }
 tasks = { code = "scripts/launch_vscode.sh", code-nocache = "scripts/launch_vscode.sh --nocache" }
 
 [tool.pixi.pypi-dependencies]
-pixi_rocker = { path = ".", editable = true }
+template_rocker = { path = ".", editable = true }
 
 [project.optional-dependencies]
 test = [
@@ -55,10 +55,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build]
-include= ["pixi_rocker"]
+include= ["template_rocker"]
 
 [project.entry-points."rocker.extensions"]
-pixi = "pixi_rocker.pixi:PixiExtension"
+pixi = "template_rocker.pixi:PixiExtension"
 
 # Environments
 [tool.pixi.environments]
