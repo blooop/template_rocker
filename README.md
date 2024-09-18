@@ -36,13 +36,12 @@ This has basic setup for
 1. Use github to use this project as a template
 2. Clone the project and run, `scripts/update_from_template.sh` and then run the `scripts/rename_project.sh` to rename the project.
 
-The most common question I get is is why would you need to use pixi in docker as pixi is already taking care of your environment for you.  Unfortunately there are some packages/configuration that pixi is not able to handle yet and so one way of handling that is managing those dependencies/configuration in docker and leave the the rest up to pixi. 
 
 If you are using pixi, look at the available tasks in pyproject.toml  If you are new to pixi follow the instructions on the pixi [website](https://prefix.dev/)
 
 # Github setup
 
-There are github workflows, for CI, codecov and automated pypi publishing in `ci.yml` and `publish.yml`.
+There are github workflows for CI, codecov and automated pypi publishing in `ci.yml` and `publish.yml`.
 
 ci.yml uses pixi tasks to set up the environment matrix and run the various CI tasks. To set up codecov on github, you need to get a `CODECOV_TOKEN` and add it to your actions secrets.
 
@@ -50,20 +49,32 @@ publish.yml uses [pypy-auto-publish](https://github.com/marketplace/actions/pyth
 
 If you use vscode to attach to your development container it makes it easier to set up specific extensions for each project that don't need to be installed globally. 
 
-## Installation
+# Development
 
 There are currently two ways of running code.  The preferred way is to use pixi to manage your environment and dependencies. 
 
 ```bash
-cd project
+$ cd project
 
-$pixi run ci
-pixi run arbitrary_task
+$ pixi run ci
+$ pixi run arbitrary_task
 ```
+
+# Adding Functionality
+
+1. Rename template_rocker/rocker_extension.py and the class inside to something more appropriate
+2. Update the extension entrypoint in `pyproject.toml` 
+
+    `[project.entry-points."rocker.extensions"]`
+
+    `rocker_extension = "template_rocker.rocker_extension:NewRockerExtension"`
+3. Add/update the docker snippets in the templates folder.  Officially the extension is supposed to be .Dockerfile.em to indicate its passed to the empy library, but I have left them as .Dockerfile as I get Dockerfile highlighting out of the box that way. 
+4. Develop your extension.  I find that using `pip install -e .` and running the extension with rocker on my host system is the easiest way to get started.  
+
 
 ## Troubleshooting
 
-The main pixi tasks are related to CI.  Github actions runs the pixi task "ci".  The CI is mostly likey to fail from a lockfile mismatch.  Use the "fix" task to fix any lockfile related problems. 
+The main pixi tasks are related to CI.  Github actions runs the pixi task "ci".  The CI is mostly likey to fail from a lockfile mismatch.  Use `pixi run fix` to fix any lockfile related problems. 
 
 ## vscode tasks
 
