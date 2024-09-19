@@ -16,10 +16,9 @@ class NewRockerExtension(RockerExtension):
         )
 
     def get_user_snippet(self, cliargs):
-        snippet = pkgutil.get_data(
+        return pkgutil.get_data(
             "template_rocker", "templates/{}_snippet.Dockerfile".format(self.name)
         ).decode("utf-8")
-        return snippet
 
     @staticmethod
     def register_arguments(parser, defaults=None):
@@ -28,6 +27,6 @@ class NewRockerExtension(RockerExtension):
         parser.add_argument(
             f"--{NewRockerExtension.get_name()}",
             action="store_true",
-            default=defaults.get("pixi"),
-            help="add pixi dependency manager to your environment",
+            default=defaults.get("new_rocker_extension"),
+            help="add new_rocker_extension to your docker image",
         )

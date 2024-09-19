@@ -7,7 +7,7 @@ from template_rocker.new_rocker_extension import NewRockerExtension
 
 class TestNewRockerExtension:
 
-    # Instantiating PixiExtension and verifying the name attribute is set correctly
+    # Instantiating new_rocker_extensionExtension and verifying the name attribute is set correctly
     def test_name_attribute_initialization(self):
         extension = NewRockerExtension()
         assert extension.name == "new_rocker_extension"
