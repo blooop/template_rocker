@@ -5,7 +5,7 @@ from rocker.extensions import RockerExtension
 class TemplateRocker(RockerExtension):
     @staticmethod
     def get_name():
-        return "new_rocker_extension"
+        return "template_rocker"
 
     def __init__(self):
         self.name = TemplateRocker.get_name()
@@ -27,6 +27,6 @@ class TemplateRocker(RockerExtension):
         parser.add_argument(
             f"--{TemplateRocker.get_name()}",
             action="store_true",
-            default=defaults.get("new_rocker_extension"),
-            help="add new_rocker_extension to your docker image",
+            default=defaults.get("template_rocker"),
+            help="add template_rocker to your docker image",
         )
