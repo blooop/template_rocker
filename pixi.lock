@@ -1371,7 +1371,7 @@ packages:
   name: template-rocker
   version: 0.0.1
   path: .
-  sha256: aa45510259c8d58665eae8ab9ce58cdea0c80d4aaf36a4e58e3e637cf0df188c
+  sha256: 3e31113357d9cff91db98c38513ec7d38f78dd22badf8da0524e98b7c899400b
   requires_dist:
   - rocker>=0.2.17
   - black>=23,<=24.8.0 ; extra == 'test'
