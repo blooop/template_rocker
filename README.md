@@ -64,7 +64,7 @@ $ pixi run arbitrary_task
 
     `[project.entry-points."rocker.extensions"]`
 
-    `new_rocker_extension = "template_rocker.new_rocker_extension:NewRockerExtension"`
+    `new_rocker_extension = "template_rocker.new_rocker_extension:TemplateRocker"`
 
     
     e.g.:
