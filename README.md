@@ -59,12 +59,12 @@ $ pixi run arbitrary_task
 
 # Adding Functionality
 
-1. Rename template_rocker/new_rocker_extension.py and the class inside to something more appropriate
+1. Rename template_rocker/template_rocker.py and the class inside to something more appropriate. Use scripts/rename and pass in the new project name.
 2. Update the extension entrypoint in `pyproject.toml` 
 
     `[project.entry-points."rocker.extensions"]`
 
-    `new_rocker_extension = "template_rocker.new_rocker_extension:NewRockerExtension"`
+    `template_rocker = "template_rocker.template_rocker:TemplateRocker"`
 
     
     e.g.:
