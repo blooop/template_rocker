@@ -1241,7 +1241,7 @@ packages:
 - pypi: .
   name: template-rocker
   version: 0.0.1
-  sha256: 3bbea7c1703aa8773eb164f5ddf9039e41d52eab1e49a35a9afe50aa8623e56c
+  sha256: e717dddfe054da5e21c0841de444131c6e6e2e3d240619a84a12fda17243eff7
   requires_dist:
   - rocker>=0.2.17
   - pylint>=3.2.5,<=3.3.3 ; extra == 'test'
