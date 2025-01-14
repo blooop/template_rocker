@@ -14,7 +14,7 @@
 
 ## Intro
 
-This a template for creating [rocker](https://github.com/tfoote/rocker) extensions.  It used [off-your-rocker](https://github.com/sloretz/off-your-rocker) as a starting point, and migrated to use `pyproject.toml` instead of `setup.py` to help manage the development environment and continuous integration in a modern way using [pixi](https://pixi.sh).  [Pixi](https://github.com/prefix-dev/pixi) is a cross-platform package manager based on the conda ecosystem.  It provides a simple and performant way of reproducing a development environment and running user defined tasks and worflows.  It more lightweight than docker, but does not provide the same level of isolation or generality.
+This a template for creating [rocker](https://github.com/tfoote/rocker) extensions.  It used [off-your-rocker](https://github.com/sloretz/off-your-rocker) as a starting point, and migrated to use `pyproject.toml` instead of `setup.py` to help manage the development environment and continuous integration in a modern way using [pixi](https://pixi.sh).  [Pixi](https://github.com/prefix-dev/pixi) is a cross-platform package manager based on the conda ecosystem.  It provides a simple and performant way of reproducing a development environment and running user defined tasks and workflows.  It more lightweight than docker, but does not provide the same level of isolation or generality.
 
 This has basic setup for
 
@@ -73,7 +73,7 @@ $ pixi run arbitrary_task
     
 3. Update the `get_name()` function in the extension class. e.g. Updating the name to `lazygit` would mean that it would be activated by passing --lazygit to rocker   
    
-4. Add/update the docker snippets in the templates folder.  Officially the extension is supposed to be .Dockerfile.em to indicate it's passed to the empy library, but I have left them as .Dockerfile as I get Dockerfile highlighting out of the box that way. 
+4. Add/update the docker snippets in the templates folder.  Officially the extension is supposed to be .Dockerfile.em to indicate it's passed to the empty library, but I have left them as .Dockerfile as I get Dockerfile highlighting out of the box that way. 
 5. Develop your extension.  I find that using `pip install -e .` and running the extension with rocker on my host system is the easiest way to get started.  
 
     ```bash
@@ -86,7 +86,7 @@ $ pixi run arbitrary_task
 
 ## Troubleshooting
 
-The main pixi tasks are related to CI.  Github actions runs the pixi task "ci".  The CI is mostly likey to fail from a lockfile mismatch.  Use `pixi run fix` to fix any lockfile related problems. 
+The main pixi tasks are related to CI.  Github actions runs the pixi task "ci".  The CI is mostly likely to fail from a lockfile mismatch.  Use `pixi run fix` to fix any lockfile related problems. 
 
 ## vscode tasks
 
@@ -99,4 +99,3 @@ There are two core tasks.
 2. run \<cfg\>
 
     This runs python with the file set in \<cfg\>
-
