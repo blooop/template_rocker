@@ -86,7 +86,7 @@ $ pixi run arbitrary_task
 
 ## Troubleshooting
 
-The main pixi tasks are related to CI.  Github actions runs the pixi task "ci".  The CI is mostly likey to fail from a lockfile mismatch.  Use `pixi run fix` to fix any lockfile related problems. 
+The main pixi tasks are related to CI.  Github actions runs the pixi task "ci".  The CI is mostly likely to fail from a lockfile mismatch.  Use `pixi run fix` to fix any lockfile related problems. 
 
 ## vscode tasks
 
@@ -99,4 +99,3 @@ There are two core tasks.
 2. run \<cfg\>
 
     This runs python with the file set in \<cfg\>
-
